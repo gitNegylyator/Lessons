@@ -95,7 +95,7 @@ public class Homework1 {
         // Дано:
         boolean hasFuel = true;
         int hasFuelPrice = 1000;
-        boolean hasElectricsProblem = true;
+        boolean hasElectricsProblem = false;
         int hasElectricsProblemPrice = 5000;
         boolean hasMotorProblem = false;
         int hasMotorProblemPrice = 10_000;
@@ -130,18 +130,20 @@ public class Homework1 {
             price = price + hasWheelsProblemPrice;
             System.out.println("В машине проблемы с колесами, с вас " + hasWheelsProblemPrice + " рублей");
         }
-        // Если две детали сломаны, то на общий счет идет скидка 10%.
-        if ((hasTransmissionProblem && hasWheelsProblem)
-            || (hasWheelsProblem && hasElectricsProblem)
-            || (hasWheelsProblem && hasTransmissionProblem)) {
-            double discount = 0.9;
-            price = price * discount;
-        }
+
         // Если сломана коробка передач, и электрика или двигатель, то на общий счет скидка 20%.
         if (hasTransmissionProblem && (hasElectricsProblem || hasMotorProblem)) {
             double discount2 = 0.8;
             price = price * discount2;
         }
+        // Если две детали сломаны, то на общий счет идет скидка 10%.
+        else if ((hasTransmissionProblem && hasWheelsProblem)
+                || (hasWheelsProblem && hasElectricsProblem)
+                || (hasWheelsProblem && hasTransmissionProblem)) {
+            double discount = 0.9;
+            price = price * discount;
+        }
+
         // Если нет бензина и что-то сломано, то за консультацию денег не берут.
         if (!hasFuel && (!hasElectricsProblem || !hasMotorProblem || !hasTransmissionProblem || !hasWheelsProblem)) {
             System.out.println("Консультация бесплатно");
