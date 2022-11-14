@@ -99,14 +99,15 @@ public class Homework1 {
         int hasElectricsProblemPrice = 5000;
         boolean hasMotorProblem = false;
         int hasMotorProblemPrice = 10_000;
-        boolean hasTransmissionProblem = true;
+        boolean hasTransmissionProblem = false;
         int hasTransmissionProblemPrice = 4000;
-        boolean hasWheelsProblem = true;
+        boolean hasWheelsProblem = false;
         int hasWheelsProblemPrice = 2000;
         double price = 0;
+        boolean everythingIsFine = !(hasElectricsProblem && hasMotorProblem && hasTransmissionProblem && hasWheelsProblem);
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
         // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
-        if (!hasFuel && (hasElectricsProblem && hasMotorProblem && hasTransmissionProblem && hasWheelsProblem)) {
+        if (!hasFuel && everythingIsFine) {
             price = hasFuelPrice;
             System.out.println("В машине ничего не сломано с вас " + hasFuelPrice + " рублей");
         }
@@ -143,11 +144,13 @@ public class Homework1 {
             double discount = 0.9;
             price = price * discount;
         }
-
+        boolean somethingIsBroken = (hasElectricsProblem || hasMotorProblem || hasTransmissionProblem || hasWheelsProblem);
         // Если нет бензина и что-то сломано, то за консультацию денег не берут.
-        if (!hasFuel && (!hasElectricsProblem || !hasMotorProblem || !hasTransmissionProblem || !hasWheelsProblem)) {
+        if (!hasFuel && somethingIsBroken) {
+        } else {
             System.out.println("Консультация бесплатно");
         }
+
         System.out.println("Итого с учетом скидок с вас " + price + " рублей");
             // Ситуации, что бензин есть и ничего не сломано - быть не может.
             // Ожидаемый результат: выведен на экран счет клиенту.
