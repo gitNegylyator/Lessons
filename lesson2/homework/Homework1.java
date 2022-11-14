@@ -146,7 +146,7 @@ public class Homework1 {
         if (!hasFuel && (!hasElectricsProblem || !hasMotorProblem || !hasTransmissionProblem || !hasWheelsProblem)) {
             System.out.println("Консультация бесплатно");
         }
-        System.out.println("Итого с учетом скидок с вас " + price);
+        System.out.println("Итого с учетом скидок с вас " + price + " рублей");
             // Ситуации, что бензин есть и ничего не сломано - быть не может.
             // Ожидаемый результат: выведен на экран счет клиенту.
 
