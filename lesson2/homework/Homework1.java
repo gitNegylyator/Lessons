@@ -97,9 +97,9 @@ public class Homework1 {
         int hasFuelPrice = 1000;
         boolean hasElectricsProblem = false;
         int hasElectricsProblemPrice = 5000;
-        boolean hasMotorProblem = false;
+        boolean hasMotorProblem = true;
         int hasMotorProblemPrice = 10_000;
-        boolean hasTransmissionProblem = false;
+        boolean hasTransmissionProblem = true;
         int hasTransmissionProblemPrice = 4000;
         boolean hasWheelsProblem = false;
         int hasWheelsProblemPrice = 2000;
@@ -119,7 +119,7 @@ public class Homework1 {
         }
         // Если у машины проблема с двигателем, то чинят и берут 10 000.
         if (hasMotorProblem) {
-            price = price + hasTransmissionProblemPrice;
+            price = price + hasMotorProblemPrice;
             System.out.println("В машине неисправен двигатель, с вас " + hasMotorProblemPrice + " рублей");
         }
         // Если у машины проблема с электрикой, то чинят и берут 5000.
