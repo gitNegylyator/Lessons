@@ -104,14 +104,16 @@ public class Homework1 {
         boolean hasWheelsProblem = false;
         int hasWheelsProblemPrice = 2000;
         double price = 0;
-        boolean everythingIsFine = (hasElectricsProblem && hasMotorProblem && hasTransmissionProblem && hasWheelsProblem);
         boolean somethingIsBroken = (hasElectricsProblem || hasMotorProblem || hasTransmissionProblem || hasWheelsProblem);
+        boolean everythingIsFine = (hasElectricsProblem ^ hasMotorProblem ^ hasTransmissionProblem ^ hasWheelsProblem) || somethingIsBroken; ;
+
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
         // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
-        if (!hasFuel ^ everythingIsFine) {
+        if (!hasFuel ^ !everythingIsFine) {
             price = hasFuelPrice;
             System.out.println("В машине ничего не сломано с вас " + hasFuelPrice + " рублей");
-        } else if (!hasFuel ^ somethingIsBroken) {
+        }
+        else if (!hasFuel ^ somethingIsBroken){
         // Если нет бензина и что-то сломано, то за консультацию денег не берут.
             System.out.println("Консультация бесплатно");
         }
