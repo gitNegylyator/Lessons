@@ -97,11 +97,11 @@ public class Homework1 {
         int hasFuelPrice = 1000;
         boolean hasElectricsProblem = false;
         int hasElectricsProblemPrice = 5000;
-        boolean hasMotorProblem = true;
+        boolean hasMotorProblem = false;
         int hasMotorProblemPrice = 10_000;
-        boolean hasTransmissionProblem = true;
+        boolean hasTransmissionProblem = false;
         int hasTransmissionProblemPrice = 4000;
-        boolean hasWheelsProblem = true;
+        boolean hasWheelsProblem = false;
         int hasWheelsProblemPrice = 2000;
         double price = 0;
         boolean somethingIsBroken = (hasElectricsProblem || hasMotorProblem || hasTransmissionProblem || hasWheelsProblem);
