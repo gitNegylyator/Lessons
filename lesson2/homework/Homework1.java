@@ -97,7 +97,7 @@ public class Homework1 {
         int hasFuelPrice = 1000;
         boolean hasElectricsProblem = false;
         int hasElectricsProblemPrice = 5000;
-        boolean hasMotorProblem = false;
+        boolean hasMotorProblem = true;
         int hasMotorProblemPrice = 10_000;
         boolean hasTransmissionProblem = true;
         int hasTransmissionProblemPrice = 4000;
